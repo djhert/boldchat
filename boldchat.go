@@ -14,12 +14,12 @@ import (
 // endpoints for the 2 regions available
 //		US for North America
 // 		EMEA for Europe, Middle East, or Africa
-// baseURL is the non-formatted string to use
-// for generating the final URL for each
-// API Call
 const (
-	US      = "api.boldchat.com"
-	EMEA    = "api-eu.boldchat.com"
+	US   = "api.boldchat.com"
+	EMEA = "api-eu.boldchat.com"
+	// baseURL is the non-formatted string to use
+	// for generating the final URL for each
+	// API Call
 	baseURL = "https://%s/aid/%s/data/rest/json/v2/%s?auth=%s%s"
 )
 
@@ -49,8 +49,8 @@ func New(id, setting, key, end string) *Client {
 	return c
 }
 
-// genHash creates a new hash code used for authentication
-// locks the mutex for a write to block the authHash
+// genHash creates a new hash code used for authentication.
+// Locks the mutex for a write to block the authHash
 func (c *Client) genHash() {
 	c.mx.Lock()
 	defer c.mx.Unlock()

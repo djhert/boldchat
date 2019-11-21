@@ -147,10 +147,6 @@ type Operator struct {
 // editString creates the query string for the edit API Call
 // returns the string or an error
 func (u Operator) editString() (string, error) {
-	str, err := json.Marshal(u.Departments)
-	if err != nil {
-		return "", nil
-	}
 	var out string
 	if u.LoginID != "" {
 		out += qs("OperatorID", u.LoginID)
@@ -158,6 +154,10 @@ func (u Operator) editString() (string, error) {
 		return "", fmt.Errorf("LoginID is empty")
 	}
 	if u.Departments != nil {
+		str, err := json.Marshal(u.Departments)
+		if err != nil {
+			return "", err
+		}
 		out += qs("Departments", string(str))
 	}
 	if u.OperatorName != "" {
