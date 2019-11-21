@@ -1,0 +1,13 @@
+## Golang ##
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/vendor/
+/Godeps/
+
+## ignore the expamles directory for now
+/examples/
