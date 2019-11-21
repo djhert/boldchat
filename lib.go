@@ -12,7 +12,7 @@ import (
 const (
 	LIBNAME    = "BoldChat"
 	MAJVERSION = 0
-	MINVERSION = 0
+	MINVERSION = 1
 	RELVERSION = 0
 )
 

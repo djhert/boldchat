@@ -8,6 +8,3 @@
 *.out
 /vendor/
 /Godeps/
-
-## ignore the expamles directory for now
-/examples/
